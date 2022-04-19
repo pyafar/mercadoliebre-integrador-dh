@@ -19,6 +19,11 @@ Verde: #39b54a;
 
 /* Mobile (ancho máximo 360px) */
 @media (max-width: 360px){
+
+    header{
+        height: 180px;
+    }
+
     p.descrip__nombre{
         display: none;
     }
@@ -39,12 +44,22 @@ Verde: #39b54a;
     .busqueda__barra{
         max-width: 100px;
     }
+
+    .busqueda__lupa {
+        left: 88%;
+    }
+    
     
 }
 
 /* Tablets (ancho mínimo 361px) */
 @media (min-width: 361px){
-    article.nav-prod__producto{
+
+    header{
+        height: 180px;
+    }
+
+    article.nav-prod__producto:hover{
         box-shadow : 2px 2px 8px rgb(100 ,100 ,100);
     }
     
@@ -60,10 +75,12 @@ Verde: #39b54a;
 
     section.cont-sup{
         max-width: 1370px;
-        margin: auto auto 3% auto;
+        margin: 0 auto 1% auto;
     }
     
-
+    .busqueda__lupa {
+        left: 88%;
+    }
     
 
     
@@ -71,8 +88,23 @@ Verde: #39b54a;
 
 /* Desktop (ancho mínimo 769 px)*/
 @media (min-width: 769px){
-    article.nav-prod__producto{
+    
+    header{
+        height: 156px;
+    }
+
+    article.nav-prod__producto:hover{
         box-shadow : 2px 2px 8px rgb(100 ,100 ,100);
+    }
+    
+    article.nav-prod__producto:hover p.descrip__nombre{
+        display: block;
+    }
+
+    article.nav-prod__producto:hover .producto__envio > i{
+        transform: rotate(-90deg);
+        transition: transform 1000ms;
+
     }
     
     .burger{
@@ -83,20 +115,53 @@ Verde: #39b54a;
         width: 42%;
         
     }
-
+    
     section.cont-menu{
         display: flex;
-        margin: auto;
+        margin: 0 auto 0 auto;
         max-width: 1370px;
+        padding-top: 15px;
     }
-
+    
     .cont-sup__busqueda{
         position: relative;
         width: 35%;
     }
+
+    .campos__send:hover{
+        background-color: #0022AA;
+        transition: all linear 500ms;
+    }
+    .datos__send:hover{
+        background-color: #0022AA;
+        transition: all linear 500ms;
+    }
+
+    .datos__erase:hover{
+        background-color: rgb(155, 155, 155);
+        color: #FFF;
+        transition: all linear 500ms;
+        
+    }
+
+    .info__icons:hover > i{
+        color: #ff00ff;
+        font-size: 3em;
+        transition: all linear 500ms;
+    }
+
+    .busqueda__lupa {
+        left: 94%;
+    }
+
+    
 }
 
 @media (min-width: 992px) {
+
+    header{
+        height: 156px;
+    }
 
     .burger{
         display: none;
@@ -105,6 +170,20 @@ Verde: #39b54a;
     .nav-prod__producto{
         width: 22%;
         
+    }
+
+    article.nav-prod__producto:hover p.descrip__nombre{
+        display: block;
+    }
+    
+    article.nav-prod__producto:hover .producto__envio > i{
+        transform: rotate(-90deg);
+        transition: all linear 1000ms;
+
+    }
+
+    .busqueda__lupa {
+        left: 94%;
     }
     
 }
@@ -122,8 +201,10 @@ body{
 
 header {
     background-color: #EAC926;
-    height: 188px;
-    padding: 12px;
+    padding: 12px 0 0 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 section.cont-sup{
@@ -131,7 +212,6 @@ section.cont-sup{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 27px;
     padding-top: 8px;
 }
 
@@ -143,9 +223,21 @@ section.cont-sup{
     max-width: 192px;
 }
 
+/* Comprá en coutas */
+
+.cuotas__texto{
+    color:#666;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+/*Barra búsqueda*/
+
 .cont-sup__busqueda{
     position: relative;
 }
+
 
 .busqueda__barra{
     border: solid 0.5px #666;
@@ -158,7 +250,6 @@ section.cont-sup{
 }
 
 .busqueda__lupa {
-    left: 89%;
     top: 30%;
     color: #666;
     position: absolute;
@@ -169,7 +260,6 @@ section.cont-sup{
 
 .cont-menu{
     align-items: flex-end;
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -184,21 +274,31 @@ ul.header__lista{
 
 }
 
-nav.menu__header > ul.header__lista > li{
+.menu__header > ul.header__lista > li{
     list-style: none;
-    padding: 8px;
+    padding: 0px 17px 0px 11px;
 }
 
 ul.header__lista > li > a{
+    color:#666;
+    font-size: 15px;
+    font-weight: 300;
     padding-right: 5px;
+    text-decoration: none;
+}
+ul.header__lista > li > i{
+    color: #666;
+    font-size: 12px;
+
 }
 
 ul.header__lista{
     padding: 0%;
 }
 
-ul.header__lista a{
-    color:#000;
+ul.header__lista > a{
+    color:#666;
+    text-decoration: none;
 }
 
 /* Menú hamburguesa */
@@ -230,13 +330,14 @@ ul.header__lista a{
 }
 
 .art-main{
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     left: 5%;
+    max-width: 75%;
     position: relative;
-    margin: 24px 0 16px 0;
+    margin: 24px auto 16px auto;
 }
 
 .art-main__titulo{
@@ -250,7 +351,7 @@ nav.art-main__nav-prod{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 
@@ -315,6 +416,7 @@ p.valor__disc{
 
 .descrip__nombre{
     color: #666;
+    display: none;
 }
 
 
@@ -326,7 +428,15 @@ p.valor__disc{
 
 footer{
     background-color: #FFFFFF;
-    padding: 20% 2% 5% 2%;
+
+}
+
+.cont-footer{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 180px;
+    justify-content: space-around;
 }
 
 .cont-footer__info{
@@ -352,7 +462,9 @@ h3.info__texto{
 
 .cont-footer__info > p{
     font-weight: 400;
-    margin: 0 15% 20% 15%;
+    width: 50%;
+    margin: auto;
+    padding: 10px 0 0 0;
 
 }
 
@@ -420,7 +532,7 @@ h3.campos__subtitulo{
 }
 
 
-/*--------- MAIN REGUSTRO--------*/
+/*--------- MAIN REGISTRO--------*/
 
 .registro__formulario{
     background-color: #FFF;
@@ -453,6 +565,8 @@ h3.campos__subtitulo{
 }
 
 
+
+
 .datos__erase{
     background-color: #ebebeb;
     border: 1px solid #ebebeb;
@@ -479,3 +593,4 @@ h3.campos__subtitulo{
     color: #666;
     margin-right: 4px;
 }
+
