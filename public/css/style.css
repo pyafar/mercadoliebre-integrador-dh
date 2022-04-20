@@ -336,6 +336,7 @@ ul.header__lista > a{
 /* ------------MAIN HOME------------- */
 
 .main-home{
+    padding-top: 154px;
     width: 90%;
 }
 
