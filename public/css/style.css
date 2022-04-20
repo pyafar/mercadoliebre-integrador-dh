@@ -48,6 +48,8 @@ Verde: #39b54a;
     .busqueda__lupa {
         left: 88%;
     }
+
+    
     
     
 }
@@ -94,7 +96,9 @@ Verde: #39b54a;
     }
 
     article.nav-prod__producto:hover{
+        border: 1px solid #ababab;
         box-shadow : 2px 2px 8px rgb(100 ,100 ,100);
+        transition: all 250ms;
     }
     
     article.nav-prod__producto:hover p.descrip__nombre{
@@ -103,7 +107,7 @@ Verde: #39b54a;
 
     article.nav-prod__producto:hover .producto__envio > i{
         transform: rotate(-90deg);
-        transition: transform 1000ms;
+        transition: transform 500ms;
 
     }
     
@@ -145,9 +149,9 @@ Verde: #39b54a;
     }
 
     .info__icons:hover > i{
-        color: #ff00ff;
-        font-size: 3em;
-        transition: all linear 500ms;
+        color: darkorchid;
+        font-size: 2.5em;
+        transition: all linear 250ms;
     }
 
     .busqueda__lupa {
@@ -286,6 +290,16 @@ ul.header__lista > li > a{
     padding-right: 5px;
     text-decoration: none;
 }
+
+ul.header__lista > li > a:hover{
+    color:#1259c3;
+    font-size: 15px;
+    font-weight: 500;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+
 ul.header__lista > li > i{
     color: #666;
     font-size: 12px;
@@ -363,8 +377,18 @@ nav.art-main__nav-prod{
 
 }
 
+.producto__img{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
 .img__foto{
     max-width: 90%;
+    padding: 16px;
 }
 
 .producto__envio{
@@ -435,13 +459,15 @@ footer{
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    height: 180px;
     justify-content: space-around;
+    min-height: 180px;
+    padding: 40px 0 15px 0;
 }
 
 .cont-footer__info{
-    color: #666;
     text-align: center;
+    color: #666;
+    padding: 10px 0 10px 0;
 }
 
 .info__icons{
@@ -479,6 +505,12 @@ h3.info__texto{
 
 /*--------- MAIN LOGIN--------*/
 
+.main-lgrg{
+    background-color: #ebebeb;
+    width: 100%;
+    padding: 200px 0 10% 0;
+}
+
 .cont-form__titulo{
     color: #666;
     font-size: 16px;
@@ -492,12 +524,13 @@ h3.info__texto{
     background-color: #FFF;
     border: 1px #666 solid;
     border-radius: 10px;
+    box-shadow: 2px 2px 5px #ababab;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin: 30px auto 30px auto;
     padding: 15px;
-    width: 304px;
+    width: 340px;
 }
 
 h3.campos__subtitulo{
@@ -511,7 +544,7 @@ h3.campos__subtitulo{
     margin: 15px auto 15px auto;
 }
 
-.campos__input{
+.campos__input, .campos__input-av{
     height: 36px;
     border: solid 2px #1259c3;
     border-radius: 7px;
@@ -520,11 +553,16 @@ h3.campos__subtitulo{
     width: 100%;
 }
 
+.campos__input-av{
+    padding-top: 7px;
+}
+
 .campos__send{
     background-color: #1259c3;
     border: 1px solid #1259c3;
     border-radius: 8px;
     color: #fff;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     height: 46px;
@@ -538,12 +576,13 @@ h3.campos__subtitulo{
     background-color: #FFF;
     border: 1px #666 solid;
     border-radius: 10px;
+    box-shadow: 2px 2px 5px #ababab;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin: 30px auto 30px auto;
     padding: 15px;
-    width: 304px;
+    width: 340px;
 }
 
 .formulario__datos{
@@ -572,6 +611,7 @@ h3.campos__subtitulo{
     border: 1px solid #ebebeb;
     border-radius: 8px;
     color: #666;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     height: 40px;
@@ -583,6 +623,7 @@ h3.campos__subtitulo{
     border: 1px solid #1259c3;
     border-radius: 8px;
     color: #fff;
+    cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     height: 40px;
